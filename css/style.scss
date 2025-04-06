@@ -1,0 +1,43 @@
+@import "./components/variables";
+@import "./components/buttons";
+@import "./components/nav";
+@import "./components/controls";
+@import "./components/preview";
+@import "./components/notification";
+@import "./components/animations";
+@import "./components/responsive";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+body {
+    background: $bg;
+    padding: 0px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    &__icon{
+        background-color: blue($color: #943434);
+        scale: 1.6;
+        text-decoration: none;
+    }
+
+    icon {
+        background-color: red;
+    }
+}
+
+.hide { 
+    display: none;
+}

@@ -1,0 +1,28 @@
+@keyframes notification-appear{
+    0%{
+        bottom: -2rem;
+        opacity: 0;
+        display: block;
+    }
+
+    80% {
+        bottom: 11rem;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 10rem;
+    }
+}
+
+@keyframes notification-hide {
+    100% {
+        bottom: 10rem;
+    }
+
+    100%{
+        bottom: -2rem;
+        opacity: 0;
+        display: none;
+    }
+}

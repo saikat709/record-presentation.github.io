@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Recorder</title>
+  <link rel="stylesheet" href="/css/test.css">
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <h2> <span class="icon">🎥</span> Classroom Recorder </h2>
+
+  <!-- Preview Video -->
+  <div class="center-x">
+    <video id="preview" autoplay muted></video>
+  </div>
+  <canvas id="mixCanvas" style="display:none;"></canvas>
+  <canvas id="slideCanvas" style="display:none;"></canvas>
+
+  <!-- Controls for Recording -->
+  <div class="controls">
+    <button id="start">Start Recording</button>
+    <button id="pause" disabled>Pause</button>
+    <button id="resume" disabled>Resume</button>
+    <button id="stop" disabled>Stop & Save</button>
+    <button onclick="stopStream()">Stop stream</button>
+  </div>
+
+  <!-- Timer Display -->
+  <div id="timer">00:00</div>
+
+  <!-- PDF Upload and Slide Navigation -->
+  <div class="slide-controls">
+    <input type="file" id="pdfUpload" accept="application/pdf">
+    <div>
+      <button id="prevSlide" disabled>⬅️ Previous Slide</button>
+      <button id="nextSlide" disabled>Next Slide ➡️</button>
+    </div>
+    <div id="pageInfo"></div>
+  </div>
+
+  <!-- Dynamic Info -->
+  <div class="dynamic" id="dynamic-info">Please upload slides to begin the session.</div>
+
+  <!-- Canvas for Mixing Screen, Webcam, and Slides --
+
+  <!-- PDF.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <script src="/js/test.js"> </script>
+</body>
+</html>

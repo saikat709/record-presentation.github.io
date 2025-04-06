@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Class</title>
+    <link rel="stylesheet" href="./css/style.css"> 
+</head>
+<body>
+    <header>
+        <div class="title">
+            <img class="title__icon" src="assets/icons/record.png" alt="logo" width="auto" height="27">
+            <h1 class="title__text">Record Class</h1>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <video id="preview" class="preview"></video>
+        <p class="info preview-container__center">We need your permissions to record. </p>
+
+        <button class="btn preview-container__center btn__gradient"> 
+            <img src="assets/icons/shield.png" alt="logo" width="25" height="auto"> 
+            <span>Manage Permissions </span>
+        </button>
+
+        <div class="modal preview-container__center">
+            <div class="modal__content">
+                <h2 class="title"> Grand Permission? </h2>
+                <div class="btn-group">
+                    <button class="btn btn__cancel"> Cancel </button>
+                    <button class="btn btn__okay"> Proceed </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="mixCanvas" class="hide"></canvas>
+
+    <div class="controls">
+        <div class="system">
+            <img src="assets/icons/microphone.png" alt="logo" width="25" height="auto"> 
+            <img src="assets/icons/camera.png" alt="logo" width="25" height="auto"> 
+        </div>
+        <button class="btn rounded btn__gradient" disabled>
+            <img src="assets/icons/play.png" alt="logo" width="25" height="auto"> 
+            <span id="play-pause">Start</span>
+        </button>
+        <div class="video_options">
+            <img src="assets/images/presentation.png" alt="logo" width="25" height="auto"> 
+            <img src="assets/images/screen.png" alt="logo" width="25" height="auto">
+            <img src="assets/images/webcam.png" alt="logo" width="25" height="auto"> 
+        </div>
+    </div>
+
+    <div class="notification notifation-open">
+        <h3 class="title"> notification </h3>
+        <p class="message"> This is message of this notification </p>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import "./variables";
+
+.btn {
+
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: rgba(61, 157, 155, 0.792);
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    max-height: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    &__gradient{
+        background: linear-gradient(
+        to right, 
+        $gradient-start, 
+        $gradient-end
+        );
+    }
+
+    &:hover{
+        box-shadow: $button-shadow;
+        transition: all 0.5s;
+        scale: 1.05 center center;
+    }
+
+    .rounded {
+        border-radius: 100%;
+        color: rebeccapurple;
+    }
+
+    &:disabled{
+        background: gray;
+        border: 1px white solid;
+        color: white;
+        font-weight: bold;
+    }
+
+    &__okay {
+        background-color: aqua;
+    }
+
+    &__cancel{
+        background-color: red;
+    }
+}

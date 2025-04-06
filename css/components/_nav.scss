@@ -1,0 +1,25 @@
+header {
+    padding: 1rem;
+    background: $nav-bg;
+    box-shadow: rgba(236, 215, 215, 0.408) 0px 1px 3px;
+
+    .title {
+        &__icon{
+            border-radius: 50%;
+            background-color: $nav-icon;
+            padding: 0.2rem;
+            font-style: normal;
+            cursor: grab;
+        }
+
+        &__text {
+            color: $text-primary;
+            // background: linear-gradient(to right, white, gray, pink);
+            // clip: ;
+        }
+    }
+
+    &:hover {
+        border: red 1px;
+    }
+}

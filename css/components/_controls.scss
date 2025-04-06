@@ -1,0 +1,18 @@
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+
+    .system {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .video_options{
+        display: flex;
+        gap: 1rem;
+    }
+}

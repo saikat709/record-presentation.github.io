@@ -1,0 +1,30 @@
+.notification{
+    position: fixed;
+    bottom: 10rem;
+    right: 1rem;
+    background-color: $bg;
+    border-radius: 20px;
+    padding: 1.2rem;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+    // display: none;
+
+    .title {
+        border-bottom: white solid 1px;
+        padding-bottom: 0.2rem;
+        color: green;
+    }
+
+    .message {
+        margin-top: 0.3rem;
+    }
+}
+
+.notifation-open {
+    animation: notification-appear 1s ease-in-out forwards;
+}
+
+.notifation-close {
+    animation: notification-hide 1s ease-in-out forwards;
+}
