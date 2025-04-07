@@ -14,5 +14,45 @@
     .video_options{
         display: flex;
         gap: 1rem;
+
+        .active {
+            border: rgb(115, 255, 124) 2px solid;
+        }
+    }
+
+
+    .btn {
+        border-radius: 20px;
+        padding: 0.5rem;
+        width: 56px;
+        position: relative;
+
+        .active {
+            border: $gradient-end 1px solid;
+        }
+
+        &:hover{
+            scale: 0.9;
+        }
+    }
+
+    .dot::after{
+        content: " ";
+        display: block;
+        background-color: rgb(167, 252, 93);
+        border-radius: 50%;
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
+        height: 13px;
+        width:  13px;
+    }
+
+    .error::after{
+        background-color: red;
+    }
+
+    .play {
+        width: auto;
     }
 }

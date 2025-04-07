@@ -6,6 +6,7 @@
 @import "./components/notification";
 @import "./components/animations";
 @import "./components/responsive";
+@import "./components/modal";
 
 *{
     padding: 0px;
@@ -38,6 +39,6 @@ body {
     }
 }
 
-.hide { 
+.hidden { 
     display: none;
 }

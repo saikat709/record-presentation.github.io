@@ -2,7 +2,7 @@
   border-radius: 12px;
   outline: none;
   border: none;
-  background-color: rgba(61, 157, 155, 0.792);
+  background-color: rgba(72, 151, 149, 0.792);
   padding: 0.5rem;
   font-size: 1.2rem;
   max-height: 3rem;
@@ -14,10 +14,12 @@
 .btn__gradient {
   background: linear-gradient(to right, #7f5af0, #2cb67d);
 }
+.btn__icon {
+  margin-inline: auto;
+}
 .btn:hover {
   box-shadow: 0px 2px 5px rgba(212, 220, 240, 0.629);
   transition: all 0.5s;
-  scale: 1.05 center center;
 }
 .btn .rounded {
   border-radius: 100%;
@@ -40,16 +42,21 @@ header {
   padding: 1rem;
   background: #213552;
   box-shadow: rgba(236, 215, 215, 0.408) 0px 1px 3px;
+  padding-inline: 2rem;
 }
 header .title__icon {
   border-radius: 50%;
   background-color: #58a6ff;
   padding: 0.2rem;
   font-style: normal;
-  cursor: grab;
+  pointer-events: none;
+  margin-right: 1rem;
 }
 header .title__text {
-  color: #e6edf3;
+  color: transparent;
+  background: linear-gradient(to right, rgb(223, 236, 220), rgb(90, 42, 54), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 header:hover {
   border: red 1px;
@@ -69,6 +76,38 @@ header:hover {
 .controls .video_options {
   display: flex;
   gap: 1rem;
+}
+.controls .video_options .active {
+  border: rgb(115, 255, 124) 2px solid;
+}
+.controls .btn {
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 56px;
+  position: relative;
+}
+.controls .btn .active {
+  border: #2cb67d 1px solid;
+}
+.controls .btn:hover {
+  scale: 0.9;
+}
+.controls .dot::after {
+  content: " ";
+  display: block;
+  background-color: rgb(167, 252, 93);
+  border-radius: 50%;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  height: 13px;
+  width: 13px;
+}
+.controls .error::after {
+  background-color: red;
+}
+.controls .play {
+  width: auto;
 }
 
 .preview {
@@ -97,44 +136,10 @@ header:hover {
   color: white;
   font-style: italic;
 }
-.preview-container .modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: center;
-  background-color: rgba(58, 46, 46, 0.607);
-  -webkit-backdrop-filter: blur(60);
-          backdrop-filter: blur(60);
-  display: none;
-}
-.preview-container .modal__content {
-  background-color: #161b22;
-  padding: 3rem;
-  border-radius: 15px;
-  color: white;
-  width: 400px;
-}
-.preview-container .modal__content .title {
-  font-style: normal;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-.preview-container .modal__content .btn-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-  margin-top: 1rem;
-  width: 100%;
-  gap: 5px;
-}
 
 .notification {
   position: fixed;
-  bottom: 10rem;
+  bottom: -8rem;
   right: 1rem;
   background-color: rgba(13, 17, 23, 0.8196078431);
   border-radius: 20px;
@@ -146,44 +151,89 @@ header:hover {
 .notification .title {
   border-bottom: white solid 1px;
   padding-bottom: 0.2rem;
-  color: green;
+  color: white;
 }
 .notification .message {
   margin-top: 0.3rem;
 }
 
-.notifation-open {
-  animation: notification-appear 1s ease-in-out forwards;
+.notification-open {
+  animation: notification-appear 2s ease-in-out forwards;
 }
 
-.notifation-close {
-  animation: notification-hide 1s ease-in-out forwards;
+.notification-close {
+  animation: notification-hide 2s ease-in-out forwards;
 }
 
 @keyframes notification-appear {
   0% {
     bottom: -2rem;
     opacity: 0;
-    display: block;
   }
   80% {
     bottom: 11rem;
     opacity: 1;
+  }
+  60% {
+    bottom: 10rem;
   }
   100% {
     bottom: 10rem;
   }
 }
 @keyframes notification-hide {
-  100% {
+  0% {
     bottom: 10rem;
+    opacity: 1;
   }
   100% {
     bottom: -2rem;
     opacity: 0;
-    display: none;
   }
 }
+@keyframes modal-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(58, 46, 46, 0.607);
+  -webkit-backdrop-filter: blur(60);
+          backdrop-filter: blur(60);
+  display: none;
+  animation: modal-appear 0.2s linear;
+  z-index: 10;
+}
+.modal__content {
+  background-color: #161b22;
+  padding: 3rem;
+  border-radius: 15px;
+  color: white;
+  width: 400px;
+  margin: auto;
+}
+.modal__content .title {
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.modal__content .btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  margin-top: 1rem;
+  width: 100%;
+  gap: 5px;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -212,6 +262,6 @@ body {
   background-color: red;
 }
 
-.hide {
+.hidden {
   display: none;
 }/*# sourceMappingURL=style.css.map */
